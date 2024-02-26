@@ -1,0 +1,6 @@
+@ParkingLot.Server_HostAddress = http://localhost:5049
+
+GET {{ParkingLot.Server_HostAddress}}/vehicletype/
+Accept: application/json
+
+###

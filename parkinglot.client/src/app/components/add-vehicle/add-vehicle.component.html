@@ -1,0 +1,10 @@
+<div class="add-vehicle">
+  <label for="vehicle-input">New Vehicle:</label>
+
+  <select name="type" #newVehicle>
+    <option [value]="0">--</option>
+    <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
+  </select>
+
+  <button (click)="emitAddNewVehicle(newVehicle.value)">Add</button>
+</div>

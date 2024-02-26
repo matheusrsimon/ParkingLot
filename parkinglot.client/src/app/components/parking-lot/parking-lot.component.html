@@ -1,0 +1,33 @@
+<div class="parking-lot" fxLayout="column">
+  <h1 id="tableLabel">Parking Lot</h1>
+
+  <div id="parking-lot-info" class="info-table" fxLayout="row" fxLayoutAlign="space-evenly center" >
+    <div class="info-row" fxLayout="column">
+      <div class="info-cell info-label" fxLayout="row" fxLayoutGap="10px">
+        <div class="info-label">Is Empty</div>
+        <div class="info-value">{{isEmpty}}</div>
+      </div>
+      <div class="info-cell info-label" fxLayout="row" fxLayoutGap="10px">
+        <div class="info-label">Is Full</div>
+        <div class="info-value">{{isFull}}</div>
+      </div>
+    </div>
+    <div class="info-row" fxLayout="column">
+      <div class="info-cell info-label" fxLayout="row" fxLayoutGap="10px">
+        <div class="info-label">Total Spots</div>
+        <div class="info-value">{{totalSpots}}</div>
+      </div>
+      <div class="info-cell info-label" fxLayout="row" fxLayoutGap="10px">
+        <div class="info-label">Spots Used</div>
+        <div class="info-value">{{spotsUsed}}</div>
+      </div>
+      <div class="info-cell info-label" fxLayout="row" fxLayoutGap="10px">
+        <div class="info-label">Spots Left</div>
+        <div class="info-value">{{spotsLeft}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="parking-sections" fxLayout fxLayoutAlign="center" fxLayoutGap="10px">
+    <parking-section *ngFor="let section of parkingLot?.sections" [section]="section" [sizes]="parkingLot?.sizes" [types]="types" (onNewVehicle)="addVehicle($event)" (onDeleteVehicle)="deleteVehicle($event)"></parking-section>
+  </div>
+</div>
